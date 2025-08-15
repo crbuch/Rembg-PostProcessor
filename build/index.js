@@ -1,18 +1,16 @@
 
-import { instantiate } from '@assemblyscript/loader/umd';
-
 let wasmModule = null;
 
 async function initImageProcessor() {
   if (wasmModule) return wasmModule;
   
-  const wasmPath = new URL('../build/release.wasm', import.meta.url);
+  const wasmPath = new URL('./release.wasm', import.meta.url);
   const response = await fetch(wasmPath);
   const wasmBytes = await response.arrayBuffer();
   
-  wasmModule = await instantiate(wasmBytes, {
-    // Import object if needed
-  });
+  // Use the instantiate function from release.js but provide our own WASM bytes
+  const { instantiate } = await import('./release.js');
+  wasmModule = await instantiate(wasmBytes, {});
   
   return wasmModule;
 }

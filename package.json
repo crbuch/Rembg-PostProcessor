@@ -1,6 +1,6 @@
 {
   "name": "rembg-postprocessor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AssemblyScript-based image processing functions for RembgTS",
   "main": "build/release.js",
   "types": "build/release.d.ts",
