@@ -4,6 +4,28 @@
   "description": "AssemblyScript-based image processing functions for RembgTS",
   "main": "build/release.js",
   "types": "build/release.d.ts",
+  "files": [
+    "build",
+    "assembly",
+    "scripts/build-js-wrapper.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crbuch/rembg-postprocessor.git"
+  },
+  "keywords": [
+    "assemblyscript",
+    "wasm",
+    "image-processing",
+    "rembg",
+    "postprocessor"
+  ],
+  "author": "crbuch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crbuch/rembg-postprocessor/issues"
+  },
+  "homepage": "https://github.com/crbuch/rembg-postprocessor#readme",
   "scripts": {
     "asbuild:debug": "asc assembly/index.ts --target debug --outFile build/debug.wasm --textFile build/debug.wat --sourceMap --debug",
     "asbuild:release": "asc assembly/index.ts --target release --outFile build/release.wasm --textFile build/release.wat --sourceMap --optimize",
